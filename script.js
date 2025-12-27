@@ -1,8 +1,24 @@
-function indexOfIgnoreCase(s1, s2) {
-  // write your code here
+function special(matrix, n) {
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      // Check if the current cell is part of the 'X' diagonals
+      if (i === j || (i + j) === (n - 1)) {
+        
+        // Diagonal elements (Primary or Secondary) must be non-zero
+        if (matrix[i][j] === 0) {
+          return false;
+        }
+        
+      } else {
+        
+        // All other elements must be exactly zero
+        if (matrix[i][j] !== 0) {
+          return false;
+        }
+        
+      }
+    }
+  }
+  // If we reach here, all conditions were met
+  return true;
 }
-
-// Please do not change the code below
-const s1 = prompt("Enter s1:");
-const s2 = prompt("Enter s2:");
-alert(indexOfIgnoreCase(s1, s2));
